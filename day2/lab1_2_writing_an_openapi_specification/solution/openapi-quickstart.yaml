@@ -1,0 +1,72 @@
+openapi: 3.1.0
+info:
+  title: API Dev Quickstart
+  description: Health check and greeting endpoints for the Fundamentals of API Development quickstart API.
+  version: v1
+servers:
+  - url: http://localhost:8080
+    description: Local quickstart API
+
+paths:
+  /api/v1/health:
+    get:
+      summary: Check service health
+      description: Returns the current status of the quickstart service.
+      operationId: getHealth
+      responses:
+        '200':
+          description: The service is healthy.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthStatus'
+              examples:
+                healthy:
+                  value:
+                    status: UP
+                    service: api-dev-quickstart
+
+  /api/v1/greetings/{name}:
+    get:
+      summary: Get a personalized greeting
+      description: Returns a greeting message that includes the supplied name.
+      operationId: getGreeting
+      parameters:
+        - name: name
+          in: path
+          required: true
+          description: The name to greet.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A greeting for the supplied name.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Greeting'
+              examples:
+                greeting:
+                  value:
+                    message: "Hello, Learner! Your API dev setup is working."
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      required: [status, service]
+      properties:
+        status:
+          type: string
+          description: UP if the service is healthy.
+        service:
+          type: string
+          description: The service identifier.
+
+    Greeting:
+      type: object
+      required: [message]
+      properties:
+        message:
+          type: string
+          description: The greeting message, including the supplied name.
