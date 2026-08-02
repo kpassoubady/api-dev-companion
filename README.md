@@ -24,7 +24,6 @@ Clone all three repos as siblings, because the exercises reference the shared AP
 
 ```text
 your-workspace/
-├── api-dev/               # slides, diagrams, instructor demos
 ├── api-dev-setup/         # install guides + the shared Spring Boot API
 └── api-dev-companion/     # this repo: concept docs + breakout exercises
     └── day1/
