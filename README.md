@@ -92,7 +92,23 @@ mvn exec:java -pl day1/lab1_1_analyzing_an_existing_api/solution -Dexec.mainClas
 | [1.2](day2/lab1_2_writing_an_openapi_specification/) | Writing an OpenAPI Specification | A hand-written OpenAPI 3.1 spec for the quickstart API's health and greeting endpoints |
 | [1.3](day2/lab1_3_peer_review_and_interactive_docs/) | Peer Review & Interactive Docs | A peer review of a partner's spec, plus springdoc-openapi annotations added to the real controllers |
 
-Days 3 and 4 are added as the course progresses.
+### Day 3: API Lifecycle, Versioning & Security
+
+[Concept docs](day3/concepts/): API lifecycle and versioning strategies, API security fundamentals (authentication, authorization, rate limiting).
+
+| Lab | Title | What you produce |
+| :--- | :--- | :--- |
+| [2.1](day3/lab2_1_designing_a_non_breaking_version_strategy/) | Designing a Non-Breaking Version Strategy | A breaking/non-breaking classification of proposed API changes, a chosen versioning strategy, and a deprecation plan |
+| [2.2](day3/lab2_2_implementing_basic_api_security_rules/) | Implementing Basic API Security Rules | A working authentication → authorization → rate-limiting security gate, applied in the correct check order |
+
+### Day 4: Testing, DevOps & Capstone
+
+[Concept docs](day4/concepts/): The API ecosystem, DevOps in API development (CI/CD, shift-left testing).
+
+| Lab | Title | What you produce |
+| :--- | :--- | :--- |
+| [2.3](day4/lab2_3_simulating_an_automated_api_test_suite/) | Simulating an Automated API Test Suite | An extended JUnit5 test suite covering negative paths, method-not-allowed handling, and content-type contracts, plus an optional Newman run of the Postman collection |
+| [2.4](day4/lab2_4_capstone_exercise/) | Capstone Exercise | A new `FarewellController` built end-to-end: classified as non-breaking, documented, security-gated, and tested, applying all four prior days' skills |
 
 ## How to Work Through an Exercise
 
