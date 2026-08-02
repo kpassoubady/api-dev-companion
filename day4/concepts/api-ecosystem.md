@@ -35,7 +35,7 @@ Spring Cloud Contract is the more natural fit for this course's all-JVM stack, b
 
 ## Where Security Sits in the Pipeline
 
-Day 3's concept docs already cover authentication, authorization, and rate limiting in depth; this session only needs to show where those controls plug into delivery. Pre-commit hooks catch secrets before code is even pushed, CI gates run dependency and static analysis scans on pull requests, CD gates scan container images before they reach a registry, and slower dynamic scans run against staging or production on a schedule rather than blocking every commit. Automated scanners still cannot reason about business logic on their own, so a flaw like broken object-level authorization needs a targeted test case, not just a clean scanner report.
+Day 3's concept docs already cover authentication, authorization, and rate limiting in depth; this session only needs to show where those controls plug into delivery. Pre-commit hooks catch secrets before code is even pushed, CI gates run dependency and static analysis scans on pull requests, CD gates scan container images before they reach a registry, and slower dynamic scans run against staging or production on a schedule rather than blocking every commit. Automated scanners still cannot reason about business logic on their own, so a flaw like broken object-level authorization needs a targeted test case; a clean scanner report alone won't catch it.
 
 ## The Case for Deep API Knowledge
 

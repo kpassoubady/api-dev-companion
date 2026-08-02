@@ -1,0 +1,81 @@
+{
+  "info": {
+    "name": "API Dev Lab 1.1 - Complete Audit",
+    "description": "Complete collection of endpoints to audit the API manually for Lab 1.1.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. GET /api/v1/health",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "health"]
+        }
+      }
+    },
+    {
+      "name": "2. GET /api/v1/greetings/YourName",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/greetings/YourName",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "greetings", "YourName"]
+        }
+      }
+    },
+    {
+      "name": "3. POST /api/v1/health (Expect 405)",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "health"]
+        }
+      }
+    },
+    {
+      "name": "4. GET /api/v1/accounts/999 (Expect 404)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/accounts/999",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "accounts", "999"]
+        }
+      }
+    },
+    {
+      "name": "5. GET OpenAPI JSON Specification",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api-docs",
+          "host": ["{{baseUrl}}"],
+          "path": ["api-docs"]
+        }
+      }
+    },
+    {
+      "name": "6. GET Swagger UI HTML",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/swagger-ui.html",
+          "host": ["{{baseUrl}}"],
+          "path": ["swagger-ui.html"]
+        }
+      }
+    }
+  ]
+}

@@ -6,7 +6,7 @@ Reference for how the OpenAPI contract from Days 1-2 becomes the artifact a real
 
 ## Core Idea
 
-API-first means the OpenAPI spec is designed and reviewed before implementation code exists, and every downstream activity, backend implementation, mock servers, generated docs, generated tests, reads from that same spec instead of a sequence of manual handoffs. Teams that work this way ship roughly 2.8 times faster and see 57 percent fewer integration defects than code-first teams. The spec you built in Days 1-2 for the quickstart project's `GreetingController` and `HealthController` endpoints is not just documentation; it is the contract a pipeline validates against on every push.
+API-first means the OpenAPI spec is designed and reviewed before implementation code exists, and every downstream activity, backend implementation, mock servers, generated docs, generated tests, reads from that same spec instead of a sequence of manual handoffs. Teams that work this way ship roughly 2.8 times faster and see 57 percent fewer integration defects than code-first teams. The spec you built in Days 1-2 for the quickstart project's `GreetingController` and `HealthController` endpoints is the contract a pipeline validates against on every push.
 
 ## The Four-Stage Pipeline
 

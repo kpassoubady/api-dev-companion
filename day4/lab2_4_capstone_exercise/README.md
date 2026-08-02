@@ -1,6 +1,6 @@
 # Breakout Exercise: Lab 2.4 — Capstone Exercise
 
-Day 4, Session 4, Breakout 2. Budget 40 minutes.
+Day 4, Session 2, Breakout 2. Budget 40 minutes.
 
 This is the last lab of the course, and it does not teach anything new. Over the last three and a half days you designed a contract (Lab 1.2), documented real controllers (Lab 1.3), classified changes as breaking or non-breaking (Lab 2.1), gated a request through authentication, authorization, and rate limiting (Lab 2.2), and wrote an automated test suite (Lab 2.3). This lab asks you to run that same sequence — design, document, secure, test — against one small addition of your own: a new `FarewellController`, parallel in shape to the `GreetingController` you have been working with all week.
 
@@ -28,11 +28,17 @@ cd ../api-dev-setup/quickstart-project
 mvn spring-boot:run
 ```
 
-Confirm it still answers as expected before you add anything:
+Confirm it still answers as expected before you add anything. You can use the provided script to test the existing endpoints and verify the new `FarewellController` once it's added:
 
 ```bash
-curl http://localhost:8080/api/v1/greetings/Learner
+# Mac/Linux or Git Bash
+./start/curl-tests.sh
+
+# Windows PowerShell
+.\start\curl-tests.ps1
 ```
+
+> **Note**: A pre-made Postman collection to test the new `FarewellController` endpoints is also available at `solution/api-dev-lab2-capstone.postman_collection.json` if you prefer clicking through Postman over using the terminal scripts.
 
 ## What's in Here
 
@@ -69,8 +75,8 @@ Let Spring Boot's dev tools reload (or restart `mvn spring-boot:run`), then chec
 Open `start/FarewellSecurityGate.java`. `checkAuthentication` is carried over unchanged from Lab 2.2 as a worked example. The one TODO, `checkFarewellAccess`, combines that lab's two separate checks — authorization and rate limiting — into a single scaled-down method, matching the size of this endpoint. This file is self-contained; it does not touch the running API.
 
 ```bash
-cd start
-java FarewellSecurityGate.java
+mvn compile
+mvn exec:java -pl day4/lab2_4_capstone_exercise/start -Dexec.mainClass="com.kavinschool.api.FarewellSecurityGate"
 ```
 
 Confirm `F3` is rejected with `403` (wrong role) and `F4` with `429` (over the limit), and that `F2` never reaches your new check at all — it fails authentication first, the same short-circuit behavior Lab 2.2's gate demonstrated.

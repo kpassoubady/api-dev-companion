@@ -47,7 +47,9 @@ If port 8080 is taken, see [Free Up Port 8080](../../../api-dev-setup/quickstart
 
 ### Step 1: Observe before you judge (10 minutes)
 
-Import the collection at `api-dev-setup/quickstart-project/postman/api-dev-quickstart.postman_collection.json` into Postman, or run the provided `start/curl-tests.sh` script if you prefer the terminal. Send these requests and record what actually comes back in Part 3 of the worksheet:
+Import the collection at `api-dev-setup/quickstart-project/postman/api-dev-quickstart.postman_collection.json` into Postman, or run the provided `start/curl-tests.sh` script (Mac/Linux or Git Bash) or `start\curl-tests.ps1` (Windows PowerShell) if you prefer the terminal. Send these requests and record what actually comes back in Part 3 of the worksheet:
+
+> **Note**: If you are short on time, a pre-made Postman collection containing *all* the requests needed for this audit (including the ones missing from the setup collection) is available at `solution/api-dev-lab1-audit.postman_collection.json`.
 
 | Request | What to look for |
 | :--- | :--- |
@@ -65,8 +67,8 @@ Send `GET /api/v1/health` three times and compare the bodies. That is how you te
 Open `start/RestConventionChecker.java`. Read `checkNoVerbsInPath` first: it is the worked example and the four TODOs follow the same shape.
 
 ```bash
-cd start
-java RestConventionChecker.java
+mvn compile
+mvn exec:java -pl day1/lab1_1_analyzing_an_existing_api/start -Dexec.mainClass="com.kavinschool.api.RestConventionChecker"
 ```
 
 It runs immediately and reports a 100% adherence score. That score is a lie, and making it honest is your job.
