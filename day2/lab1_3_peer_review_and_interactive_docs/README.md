@@ -24,13 +24,17 @@ cd ../api-dev-setup/quickstart-project
 mvn spring-boot:run
 ```
 
-Confirm the pre-lab docs are being served (unannotated, so springdoc has almost nothing to say yet):
+Confirm the pre-lab docs are being served (unannotated, so springdoc has almost nothing to say yet). You can run the provided `start/curl-tests.sh` script to fetch the JSON spec and verify the Swagger UI endpoint is reachable:
 
 ```bash
-curl http://localhost:8080/api-docs
+# Mac/Linux or Git Bash
+./start/curl-tests.sh
+
+# Windows PowerShell
+.\start\curl-tests.ps1
 ```
 
-Open `http://localhost:8080/swagger-ui.html` in a browser and keep it open. You will reload it after Step 2.
+Alternatively, you can open `http://localhost:8080/swagger-ui.html` in a browser and keep it open. You will reload it after Step 2.
 
 ## What's in Here
 

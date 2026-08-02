@@ -42,8 +42,8 @@ Open `start/ChangeClassifier.java`. Read `checkFieldRename` first: it is the wor
 ### Step 2: Implement the checks (12 minutes)
 
 ```bash
-cd start
-java ChangeClassifier.java
+mvn compile
+mvn exec:java -pl day3/lab2_1_designing_a_non_breaking_version_strategy/start -Dexec.mainClass="com.kavinschool.api.ChangeClassifier"
 ```
 
 It runs immediately and reports `C2`, `C3`, and `C4` as non-breaking. That's wrong; making it honest is your job. Implement:

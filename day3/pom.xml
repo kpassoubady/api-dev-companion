@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.kavinschool.api</groupId>
+        <artifactId>api-dev-companion</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>day3-labs</artifactId>
+    <packaging>pom</packaging>
+    <name>Day 3 Labs</name>
+
+    <modules>
+        <module>lab2_1_designing_a_non_breaking_version_strategy</module>
+        <module>lab2_2_implementing_basic_api_security_rules</module>
+    </modules>
+</project>

@@ -37,8 +37,8 @@ Open `start/ApiSecurityGate.java`. Read `checkAuthentication` first: it is the w
 ### Step 2: Implement the checks (15 minutes)
 
 ```bash
-cd start
-java ApiSecurityGate.java
+mvn compile
+mvn exec:java -pl day3/lab2_2_implementing_basic_api_security_rules/start -Dexec.mainClass="com.kavinschool.api.ApiSecurityGate"
 ```
 
 It runs immediately, but every request that should fail authorization or rate limiting instead gets served. Implement:

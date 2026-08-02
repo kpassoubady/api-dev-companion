@@ -58,16 +58,21 @@ Swagger UI is at <http://localhost:8080/swagger-ui.html>. If port 8080 is taken,
 
 ## Running Exercise Code
 
-Standalone exercise files need no build step. The JDK single-file source launcher compiles and runs them in one command:
+All exercises are part of a multi-module Maven project. You can run individual exercise classes using the `exec-maven-plugin`.
+
+For example, to run the start code for Lab 1.1:
 
 ```bash
-cd day1/lab1_1_analyzing_an_existing_api/start
-java RestConventionChecker.java
+mvn compile
+mvn exec:java -pl day1/lab1_1_analyzing_an_existing_api/start -Dexec.mainClass="com.kavinschool.api.RestConventionChecker"
 ```
 
-If your default JDK is newer than 21 and you want to confirm the code compiles at the course's language level, add `--source 21`.
+To run the solution:
 
-Exercises that ship as a Maven project instead include their own `pom.xml` and `README.md` with the commands to use.
+```bash
+mvn compile
+mvn exec:java -pl day1/lab1_1_analyzing_an_existing_api/solution -Dexec.mainClass="com.kavinschool.api.RestConventionChecker"
+```
 
 ## Exercises
 

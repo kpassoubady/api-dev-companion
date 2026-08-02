@@ -1,6 +1,6 @@
 # Breakout Exercise: Lab 2.3 — Simulating an Automated API Test Suite
 
-Day 4, Session 1. Budget 30 minutes.
+Day 4, Session 2. Budget 30 minutes.
 
 Lab 1.1 audited this API by hand: you sent requests, read the responses, and wrote down what you found. The test suite already in `quickstart-project` only proves the happy path — one passing request per controller. Today you turn Lab 1.1's manual findings into JUnit5 assertions that run every time, the same shift-left move the DevOps overview just covered: unit tests as the first, fastest gate in a pipeline, run from IntelliJ standing in for what a Maven `verify` phase does for real.
 
@@ -72,6 +72,16 @@ If you finish early:
 
    ```bash
    npx newman run ../../../api-dev-setup/quickstart-project/postman/api-dev-quickstart.postman_collection.json
+   ```
+
+   Alternatively, if you don't have Node/npm installed to run Newman, you can use the provided `start/curl-tests.sh` script to simulate a pure shell-based test suite validation instead:
+
+   ```bash
+   # Mac/Linux or Git Bash
+   ./start/curl-tests.sh
+
+   # Windows PowerShell
+   .\start\curl-tests.ps1
    ```
 
    This project has no database, so there is nothing here for Testcontainers to spin up — that tool solves a different problem (real dependencies for integration tests) than this lab's unit-level MockMvc suite or Newman's black-box collection run. If you want to see the containerized version of Newman instead of running it via `npx`, you are welcome to write your own `docker-compose.yml` for it, but that is optional; the `npx newman run` command above is the complete stretch goal.
