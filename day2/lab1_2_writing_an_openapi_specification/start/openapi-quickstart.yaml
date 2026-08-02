@@ -1,0 +1,60 @@
+openapi: 3.1.0
+info:
+  title: API Dev Quickstart
+  description: Health check and greeting endpoints for the Fundamentals of API Development quickstart API.
+  version: v1
+servers:
+  - url: http://localhost:8080
+    description: Local quickstart API
+
+paths:
+  # Worked example. Read this fully before touching the greetings path below.
+  /api/v1/health:
+    get:
+      summary: Check service health
+      description: Returns the current status of the quickstart service.
+      operationId: getHealth
+      responses:
+        '200':
+          description: The service is healthy.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthStatus'
+              examples:
+                healthy:
+                  value:
+                    status: UP
+                    service: api-dev-quickstart
+
+  # TODO 1: Add a summary and description for this operation.
+  # TODO 2: Complete the "name" path parameter: mark it required, give it a
+  #         string schema, and add a one-line description.
+  # TODO 3: Add a 200 response whose content references the Greeting schema
+  #         you define below in components/schemas.
+  /api/v1/greetings/{name}:
+    get:
+      operationId: getGreeting
+      parameters:
+        - name: name
+          in: path
+          # TODO: required, schema, description go here
+      responses:
+        # TODO: '200' response goes here
+
+components:
+  schemas:
+    # Worked example, referenced by the health path above.
+    HealthStatus:
+      type: object
+      required: [status, service]
+      properties:
+        status:
+          type: string
+          description: UP if the service is healthy.
+        service:
+          type: string
+          description: The service identifier.
+
+    # TODO 4: Define the Greeting schema. It needs one required "message"
+    #         string field. Match the exact shape you observed in Step 1.

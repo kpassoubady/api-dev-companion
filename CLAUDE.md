@@ -3,6 +3,7 @@
 This repository is the exercise companion for the **Fundamentals of API Development** course. It provides hands-on exercises, starter projects, and reference solutions for students to practice API development concepts.
 
 ## Directory Layout
+- `dayN/concepts/`: Student-facing reference docs for that day, read before or alongside the labs.
 - `llm-context/`: Stores context for LLM agents.
 - `start/`: Starter code and exercise handouts for students.
 - `solution/`: Reference solutions for instructors and self-checking.
