@@ -104,5 +104,4 @@ Days 3 and 4 are added as the course progresses.
 
 ## Related Repositories
 
-- [api-dev](https://github.com/kpassoubady/api-dev): Course catalog, outlines, slides, diagrams, and instructor demos.
-- [api-dev-setup](https://github.com/kpassoubady/api-dev-setup): Installation guides and the environment verification quickstart project.
+[api-dev-setup](https://github.com/kpassoubady/api-dev-setup): Installation guides and the environment verification quickstart project.
