@@ -45,6 +45,10 @@ Send each request in Postman. Record what actually came back, not what you expec
 
 TODO: add at least two more rows of your own.
 
+How many total endpoints did you discover? How many were NOT in the provided Postman collection? Write the number here: ___
+
+If this API had 200 endpoints across three teams and no catalog, which problem would you hit first: duplicate endpoints, unpatched vulnerabilities, or the inability to retire anything? Explain in one sentence.
+
 ## Part 4: Resource Naming, Rules 1 to 8
 
 Score each rule. Use "n/a" honestly when the API gives you nothing to judge.

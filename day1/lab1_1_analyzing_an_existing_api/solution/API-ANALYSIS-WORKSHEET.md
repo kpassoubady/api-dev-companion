@@ -45,6 +45,10 @@ The absence of authentication is expected on Day 1; Day 3 adds it. The absence o
 | HEAD | `/api/v1/health` | 200 | `application/json` | Empty body, same status and type as `GET` |
 | GET | `/api/v1/health` (x3) | 200 | `application/json` | Byte-identical each time |
 
+Total endpoints discovered: 6 distinct paths (health, greetings/{name}, accounts/999, api-docs, swagger-ui.html, plus the HEAD variant). Endpoints not in the provided Postman collection: 3 (accounts/999, /api-docs, /swagger-ui.html). The collection covers only the two happy-path endpoints, which means half the reachable surface is undocumented in the tool the student was given.
+
+If this API had 200 endpoints across three teams and no catalog, the first problem would be duplicate endpoints, because no team can answer "does an endpoint for this already exist?" before building one. The unpatched vulnerabilities follow closely: an endpoint nobody can list is one nobody audits.
+
 ## Part 4: Resource Naming, Rules 1 to 8
 
 | Rule | Verdict | Evidence or counter-example |

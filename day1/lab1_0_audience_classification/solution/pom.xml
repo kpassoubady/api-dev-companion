@@ -5,15 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.kavinschool.api</groupId>
-        <artifactId>api-dev-companion</artifactId>
+        <artifactId>lab1-0-audience-classification-parent</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>day1-labs</artifactId>
-    <packaging>pom</packaging>
-    <name>Day 1 Labs</name>
-
-    <modules>
-        <module>lab1_0_audience_classification</module>
-        <module>lab1_1_analyzing_an_existing_api</module>
-    </modules>
+    <artifactId>lab1-0-audience-classification-solution</artifactId>
+    <packaging>jar</packaging>
+    <name>Lab1 0 Audience Classification - Solution</name>
 </project>
