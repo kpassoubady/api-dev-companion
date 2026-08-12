@@ -70,3 +70,5 @@ Paste your completed file into the Swagger Editor. Fix anything it flags. Then c
 ## Next
 
 Bring this file to Lab 1.3. You will trade it with a partner, peer review it, then compare it against the version springdoc-openapi generates once the real controllers are annotated.
+
+> **Reference:** See `day2/concepts/springdoc-openapi.md` for a complete guide to generating API docs from code — the dependency setup, the commands, the annotation reference, and the contract-first vs. code-first tradeoff.

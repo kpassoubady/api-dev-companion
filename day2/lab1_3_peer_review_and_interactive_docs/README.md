@@ -36,6 +36,25 @@ Confirm the pre-lab docs are being served (unannotated, so springdoc has almost 
 
 Alternatively, you can open `http://localhost:8080/swagger-ui.html` in a browser and keep it open. You will reload it after Step 2.
 
+## Generating the Docs: Quick Reference
+
+The quickstart API already has `springdoc-openapi` on its classpath. Generating docs is three steps:
+
+```bash
+# 1. Start the API (from api-dev-setup/quickstart-project/)
+mvn spring-boot:run
+
+# 2. Open the interactive console in a browser
+open http://localhost:8080/swagger-ui.html   # macOS
+# or browse to the URL on any platform
+
+# 3. (Optional) Fetch the raw OpenAPI spec
+curl http://localhost:8080/api-docs          # JSON
+curl http://localhost:8080/api-docs.yaml     # YAML
+```
+
+> See `day2/concepts/springdoc-openapi.md` for the full annotation reference, configuration options, and troubleshooting.
+
 ## What's in Here
 
 | Path | What it is |
@@ -56,11 +75,27 @@ Trade `openapi-quickstart.yaml` files with a partner. Fill in `start/PEER-REVIEW
 
 Open `api-dev-setup/quickstart-project/src/main/java/com/apidev/quickstart/controller/HealthController.java` and `GreetingController.java`. Using the `TODO`s in `start/HealthController.annotated-template.java` and `start/GreetingController.annotated-template.java` as your guide, add `@Operation`, `@ApiResponse`, and `@Parameter` annotations directly to the real files.
 
-Save, let Spring Boot's dev tools reload (or restart `mvn spring-boot:run`), then refresh `http://localhost:8080/swagger-ui.html`. Your summaries and descriptions should now appear in the live console, generated from the code you just annotated.
+```bash
+# Restart the API so springdoc picks up the new annotations
+cd ../api-dev-setup/quickstart-project
+mvn spring-boot:run
+```
+
+Refresh `http://localhost:8080/swagger-ui.html` in your browser. Your summaries and descriptions should now appear in the live console. To verify from the command line:
+
+```bash
+# Check that the OpenAPI JSON now includes your descriptions
+curl -s http://localhost:8080/api-docs | python3 -m json.tool | head -40
+```
 
 ### Step 3: Compare the two (8 minutes)
 
 Open your Lab 1.2 spec and the live `http://localhost:8080/api-docs` output side by side.
+
+```bash
+# Save the generated spec to a file for side-by-side comparison
+curl http://localhost:8080/api-docs -o generated-openapi.json
+```
 
 - Does the hand-written spec's `description` match what you actually wrote in the annotation?
 - Does the generated spec have anything your hand-written one is missing, or the reverse?

@@ -47,7 +47,17 @@
       "Write(/tmp/**)",
       "Edit(/tmp/**)",
       "Read(//Users/kangs/.claude/**)",
-      "Read(//Users/kangs/.copilot/**)"
+      "Read(//Users/kangs/.copilot/**)",
+      "Bash(mvn -q compile exec:java -Ddemo.class=com.kavinschool.demos.DemoApiAsContract)",
+      "Bash(find \"/Users/kangs/code/github/api-dev-setup/quickstart-project/src\" -name \"*.java\" | xargs -I{} echo {})",
+      "Read(//Users/kangs/code/github/api-dev-setup/quickstart-project/src/**)",
+      "Bash(find \"/Users/kangs/code/github/api-dev-setup/quickstart-project/postman\" -type f | sort)",
+      "Read(//Users/kangs/code/github/api-dev-setup/quickstart-project/postman/**)",
+      "Bash(/usr/bin/curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8080/api-docs)",
+      "Bash(/usr/bin/curl -s -D - -o /dev/null \"http://localhost:8080/swagger-ui.html\")",
+      "Bash(pkill -f \"spring-boot:run\")",
+      "Bash(pkill -f \"QuickstartApplication\")",
+      "Bash(/usr/bin/curl -s -o /dev/null -w \"%{http_code}\\\\n\" --max-time 2 http://localhost:8080/api/v1/health)"
     ],
     "deny": [
       "Bash(rm*)",
@@ -58,8 +68,7 @@
       "Bash(wipe*)",
       "Bash(mkfs*)",
       "Bash(diskutil eraseDisk*)",
-      "Bash(format*)",
-      "Bash(:(){ :|:& };:)"
+      "Bash(format*)"
     ],
     "additionalDirectories": [
       "/tmp",
