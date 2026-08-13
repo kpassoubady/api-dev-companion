@@ -6,16 +6,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kavinschool</groupId>
-    <artifactId>api-dev-day4-demos</artifactId>
+    <artifactId>api-dev-day3-demos</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>api-dev-day4-demos</name>
+    <name>api-dev-day3-demos</name>
     <description>
-        Instructor demos for Day 4 of Fundamentals of API Development: DevOps
-        in API development (CI/CD pipeline gating, Surefire vs. Failsafe) and
-        the API ecosystem (contract drift detection, the layered test
-        pyramid). Pure JDK, no third-party dependencies.
+        Instructor demos for Day 3 of Fundamentals of API Development: API
+        lifecycle, versioning, and security standards (authentication,
+        authorization, rate limiting). Pure JDK, no third-party dependencies.
     </description>
 
     <properties>
@@ -24,8 +23,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Which demo `mvn exec:java` runs. Override on the command line:
-             mvn -q compile exec:java -Ddemo.class=com.kavinschool.demos.DemoPipelineGateSimulator -->
-        <demo.class>com.kavinschool.demos.DemoPipelineGateSimulator</demo.class>
+             mvn -q compile exec:java -Ddemo.class=com.kavinschool.demos.DemoUriVersionRouter -->
+        <demo.class>com.kavinschool.demos.DemoNonBreakingChangeChecklist</demo.class>
     </properties>
 
     <!-- No dependencies on purpose. Every demo uses only the JDK, so the
